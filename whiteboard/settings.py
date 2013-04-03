@@ -5,6 +5,9 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+#Where we are, for portabilty reasons
+WHITEBOARD_ROOT = os.path.dirname(os.path.dirname(__file__))
+
 ADMINS = (
     ('Titou', 'titouanchristophe@gmail.com'),
     ('Nikita', 'nikita.marchant@gmail.com'),
@@ -37,7 +40,7 @@ TIME_ZONE = 'Europe/Brussels'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-be'
 
 SITE_ID = 1
 
@@ -115,9 +118,7 @@ ROOT_URLCONF = 'whiteboard.urls'
 WSGI_APPLICATION = 'whiteboard.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(WHITEBOARD_ROOT, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -127,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'whiteboard',
     'keywords',
     'graph',

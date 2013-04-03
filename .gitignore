@@ -1,5 +1,8 @@
+#sass
+.sass-cache
+
 #app
-graph/static/graph.svg
+whiteboard/templates/graph.svg
 
 #development
 db.sql
